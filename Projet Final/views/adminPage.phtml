@@ -1,0 +1,15 @@
+<h1>ADMIN PAGE</h1>
+<div class="add-btn-container">
+    <button class="add-btn"><a href="index.php?route=addGameForm">Ajouter un jeu</a></button>
+</div>
+<section class="games">
+    <?php foreach( $games as $game ): ?>
+        <div class="game">
+            <h2><?= $game['name'] ?></h2>
+            <div class="game-slogan">
+                <h3><?= $game['slogan'] ?></h3>
+            </div>
+            <button class="add-btn"><a href="index.php?route=editGameForm&id=<?= $game['id'] ?>">Modifier</a></button>
+        </div>
+    <?php endforeach; ?>
+</section>

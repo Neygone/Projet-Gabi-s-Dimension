@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="public/css/style.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <section class="signup-container">
+        <h1>Créer un compte</h1>
+        <form class="signup-form" method="POST" action="index.php?route=newSession">
+            <div class="signup-input">
+                <label for="username">Nom d'utilisateur</label>
+                <input type="text" class="username focus" autocomplete="off" name="username" required="required" maxlength="15"/>
+                <?php if( isset( $_GET['error1'] ) || isset( $_GET['error3'] )): ?>
+                    <p><?= $_SESSION['EmailUsernameError']?></p>
+                <?php endif; ?>
+            </div> 
+            
+            <div class="signup-input">
+                <label for="email">Email</label>
+                <input type="email" class="email focus" autocomplete="off" name="email" required="required"/>
+                <?php if( isset( $_GET['error1'] ) || isset( $_GET['error3'] )): ?>
+                    <p><?= $_SESSION['EmailUsernameError']?></p>
+                <?php endif; ?>  
+            </div> 
+            
+            <div class="signup-input">
+                <label for="password">Mot de passe</label>
+                <input type="password" class="password focus" autocomplete="off" name="password" required="required"/>
+                <?php if( isset( $_GET['error2'] ) || isset( $_GET['error3'] ) ): ?>
+                    <p><?= $_SESSION['PasswordError']?></p>
+                <?php endif; ?>
+            </div> 
+            
+            <div class="signup-input">
+                <label for="password"><span class="password-confirmation">Confirmer votre mot de passe</span></label>
+                <input type="password" class="password" autocomplete="off" name="passwordConfirmation" required="required"/>
+                <?php if( isset( $_GET['error2'] ) || isset( $_GET['error3'] )): ?>
+                    <p><?= $_SESSION['PasswordError']?></p>
+                <?php endif; ?>
+            </div>
+            
+            <input type="submit" value="Connexion" class="signup-btn" name="submit"/>
+        </form>
+    </section>
+    <main>
+        <?php include_once $view ?>
+    </main>
+</body>
+</html>

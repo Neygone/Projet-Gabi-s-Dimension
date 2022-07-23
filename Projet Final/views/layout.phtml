@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="C'est un site contenant plusieurs jeux vidéos avec un système de classement et de rang">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gabi's Dimension     ☄</title>
+    <link rel="stylesheet" href="public/css/style.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/png" href="public/img/galaxy_icon.png" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.php?route=gamesLobby" title="gamesLobby">GABI'S DIMENSION</a>
+            
+            <a href="index.php?route=leaderboard" title="leaderboard"><i class="fa-solid fa-trophy"></i></a> <!-- CLASSEMENT -->
+            
+            <a href="index.php?route=myProfile" title="myProfile"><i class="fa-solid fa-user"></i></a> <!-- PROFIL -->
+            <?php if(isset( $_SESSION['Admin'] )): ?>
+                <a href="index.php?route=adminMode" title="adminMode"><i class="fa-solid fa-screwdriver-wrench"></i></a> <!-- ADMIN -->
+            <?php endif; ?>
+            <a href="#" title="deconnexion"><i class="fa-solid fa-power-off" "deconnexionButton"></i></a> <!-- DECONNEXION -->
+            <div class="modal">
+                <div class="modal-content">
+                    <h3>Es-tu sûr de vouloir te déconnecter ?</h3>
+                    <div class="oui">
+                        <a href="index.php?route=deconnexion" name="deconnexion_oui">OUI</a>
+                    </div>
+                    <div class="non">
+                        <a href="#">NON</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <?php include_once $view ?>
+    </main>
+    <script type="text/javascript" src="public/js/modal.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<h1>AJOUTER UN JEU</h1>
+<form action="index.php?route=addGame" method="POST" class="admin-game-form">
+        <div class="inputs">
+                <label for="name">Nom</label>
+                <input type="text" name="name" require="required"/>
+        </div>
+        
+        <div class="inputs">
+                <label for="description">Description</label>
+                <textarea rows="5" cols="25" name="description" require="required"></textarea>
+        </div>
+        
+        <div class="inputs">
+                <label for="description">Slogan</label>
+                <textarea rows="3" cols="15" name="slogan" require="required"></textarea>
+        </div>
+        
+        <div class="inputs">
+                <label for="submit"></label>
+                <input type="submit" value="Confirmer" name="submit" class="more"/>
+        </div>
+</form>

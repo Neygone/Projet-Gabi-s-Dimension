@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="public/css/style.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <section class="login-container">
+        <h1>Se connecter</h1>
+        <form class="login-form" method="POST" action="index.php?route=getSession">
+            <div class="login-input">
+                <label for="email">Email</label>
+                <input type="text" class="email" name="email" require="required" autocomplete="off"/>
+                <?php if( isset( $_GET['error4'] )): ?>
+                    <p><?= $_SESSION['EmailError'] ?></p>
+                <?php endif; ?>
+            </div>
+            <div class="login-input">
+                <label for="password">Mot de passe</label>
+                <input type="password" class="password" name="password" require="required" autocomplete="off"/>
+                <?php if( isset( $_GET['error5'] )): ?>
+                    <p><?= $_SESSION['InvalidPassword'] ?></p>
+                <?php endif; ?>
+            </div>
+            <label for="connexion"></label>
+            <input type="submit" value="Connexion" class="login-btn" name="submit"/>
+        </form>
+    </section>
+    <main>
+        <?php include_once $view ?>
+    </main>
+</body>
+</html>

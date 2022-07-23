@@ -1,0 +1,10 @@
+<div class="game-description-container"> 
+    <div class="game-description">
+        <h2><?= $game['name'] ?></h2>
+        <h4><?= $game['description'] ?></h4>
+        <p>Ton score: <strong><?= (isset($user['score_value']))? $user['score_value']:"0" ?></strong></p>
+        <form method="POST">
+            <a href="index.php?route=play&id=<?= $game['id'] ?>">JOUER</a>
+        </form>
+    </div>
+</div>

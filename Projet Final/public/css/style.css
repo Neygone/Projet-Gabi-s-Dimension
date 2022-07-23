@@ -1,0 +1,1301 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --white: #fff;
+    --whiteLowOpacity: rgba(255, 255, 255, 0.5);
+    --blueCelest: #AFECE7;
+    --darkBlueCelest: #9bd8dd;
+    --purple: #5c3c92;
+    --darkPurple: #48287e;
+    --red: #ea5d5d;
+    --darkRed: #b42a2a;
+}
+
+
+
+/* MOBILE FIRST */
+
+
+
+body, main{
+    height: 100%;
+    background-color: var(--purple);
+}
+
+td, th, table{
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 1px transparent;
+    border-radius: 10px;
+    text-align: center;
+    color: var(--blueCelest);
+    padding: 10px;
+}
+
+h1, h2, h3, h4{
+    text-align: center;
+    color: var(--blueCelest);
+}
+
+input{
+    font-size: 1em;
+}
+
+label{
+    font-family: Rubik Wet Paint;
+    color: var(--blueCelest);
+    text-align: center;
+    /*margin-bottom: 1em;*/
+}
+
+p{
+    text-align: center;
+    color: var(--blueCelest);
+    /*margin-bottom: 50px;*/
+}
+
+table{
+    background-color: var(--darkPurple);
+}
+
+tr{
+    background-color: var(--purple);
+    font-size: 0.6em;
+}
+
+
+
+/* //////////////////// HOME \\\\\\\\\\\\\\\\\\\\\\ */
+
+
+
+
+.home{
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../img/foret.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.home h1{
+    text-align: center;
+    color: var(--white);
+    position: relative;
+    top: 10%;
+    font-size: 2em;
+    font-family: Rubik Moonrocks;
+    margin-bottom: 2em;
+}
+
+.home-form{
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-link, .signup-link{
+    padding: 1em;
+    border: solid 3px var(--blueCelest);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.5em;
+    font-family: Rubik Wet Paint;
+}
+
+.login-link{
+    margin-bottom: 0.5em;
+    animation-name: displayLoginButton;
+    animation-duration: 5s;
+}
+
+@keyframes displayLoginButton{
+    from{ opacity: 0.3; }
+    to { opacity: 1; }
+}
+
+.signup-link{
+    margin-top: 1em;
+    animation-name: displaySignUpButton;
+    animation-duration: 5s;
+}
+
+@keyframes displaySignUpButton{
+    from{ opacity: 0; }
+    to { opacity: 1; }
+}
+
+.login-link:hover, .signup-link:hover{
+    color: var(--whiteLowOpacity);
+    border: solid 3px var(--whiteLowOpacity);
+}
+
+
+
+/* //////////////////// LOGIN \\\\\\\\\\\\\\\\\\\\\ */
+
+
+
+.login-container, .signup-container{
+    
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../img/foret.jpg');
+    background-size: cover;
+}
+
+.login-container h1, .signup-container h1{
+    text-align: center;
+    color: var(--blueCelest);
+    font-size: 2em;
+    position: relative;
+    top: 5%;
+}
+
+.login-form{
+    height: 60vh;
+    width: 60vw;
+    margin: auto;
+    position: relative;
+    top: 10%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    border: solid 5px var(--blueCelest);
+    border-radius: 2em;
+    color: var(--white);
+    font-size: 1em;
+}
+
+.login-input{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding : 0.5em;
+    margin: 1em;
+}
+
+.login-input label {
+    font-size : 1em!important;
+}
+
+.login-btn, .signup-btn{
+    padding: 0.8em;
+    font-size: 1em;
+    border: solid 1px var(--white);
+    background-color: var(--blueCelest);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.login-btn:hover, .signup-btn:hover{
+    background-color: transparent;
+    border: solid 1px var(--white);
+    color: var(--white);
+}
+
+
+
+/* //////////////////// SIGNUP \\\\\\\\\\\\\\\\\\\\\ */
+                    
+                    
+
+.signup-form{
+    height: 75vh;
+    width: 60vw;
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    position: relative;
+    top: 10%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    border: solid 5px var(--blueCelest);
+    border-radius: 2em;
+    color: var(--white);
+    font-size: 1em;
+    padding: 0.2em;
+}
+
+.email, .password, .username{
+    border: solid 3px #aaa;
+    width: 95%;
+    padding: 0.5em;
+    margin: auto;
+}
+
+.signup-input{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0.5em;
+}
+
+.password-confirmation{
+    font-size: 0.6em;
+}
+
+
+
+/* //////////////////// HEADER \\\\\\\\\\\\\\\\\\\\ */
+
+
+
+header{
+    background-color: var(--blueCelest);
+    width: 100%;
+    height: 10vh;
+}
+
+nav{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 10vh;
+}
+
+nav > a{
+    color: #5c3c92;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-family: Rubik Moonrocks;
+}
+
+.fa-trophy:hover{
+    animation: trophyAnimation 2s linear infinite;
+}
+
+@keyframes trophyAnimation{
+    0%
+    {
+        filter: brightness(1);
+        transform: rotate(0deg);
+    }
+    25%
+    {
+        filter: brightness(1.15);
+        transform: rotate(10deg);
+    }
+    50%
+    {
+        filter: brightness(1.30);
+        transform: rotate(0deg);
+    }
+    75%
+    {
+        filter: brightness(1.15);
+        transform: rotate(-10deg);
+    }
+    100%
+    {
+        filter: brightness(1);
+        transform: rotate(0deg);
+    }
+}
+
+
+
+/* //////////////////// SECTION GAMESLOBBY \\\\\\\\\\\\\\\\\\\\ */
+
+
+
+.gameslobby-title{
+    text-align: center;
+    font-size: 1.3em;
+    margin-bottom: 100px;
+}
+
+.gameslobby-title-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    top: 50px;
+}
+
+.modal{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content{
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1em;
+    width: 80%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #f4f4f4;
+    animation-name: openModal;
+    animation-duration: 1s;
+}
+
+@keyframes openModal{
+    from{ opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content h3{
+    height: 20%;
+    width: 100%;
+    text-align: center;
+    color: black;
+}
+
+.oui, .non{
+    height: 5vh;
+    width: 60vw;
+    font-size: 1.5em;
+    border: solid 1px transparent;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.oui{
+    background-color: var(--purple);
+}
+
+.oui a{
+    color: #f4f4f4;
+    text-decoration: none;
+    border: solid 1px transparent;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.oui a:hover{
+    background-color: var(--darkPurple);
+}
+
+.non{
+    background-color: #d2d2d2;
+}
+
+.non a{
+    color: black;
+    text-decoration: none;
+    border: solid 1px transparent;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.non a:hover{
+    background-color: #b0b0b0;
+}
+
+.games{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.game{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 90%;
+    border: solid 1px #eae5e5;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    font-size: 1em;
+    background-image: url('../img/foret.jpg');
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.game-slogan{
+    width: 70%;
+    height: 20vh;
+    border: solid 1px white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.games h2{
+    font-family: Rubik Moonrocks;
+    margin-top: 0.5em;
+    color: var(--blueCelest);
+}
+
+.more{
+    width: 70%;
+    font-size: 1em;
+    padding: 1em;
+    background-color: var(--blueCelest);
+    font-family: Rubik Moonrocks;
+    color: var(--purple);
+    border: solid 1px var(--blueCelest);
+    text-align: center;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.more:hover{
+    background-color: var(--darkPurple);
+    color: var(--darkBlueCelest);
+}
+
+
+
+/* //////////////////// SECTION GAMES PAGE \\\\\\\\\\\\\\\\\\\\ */
+
+
+
+.game-description-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.game-description{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 80vh;
+    width: 80%;
+    font-size: 1em;
+    border: solid 3px black;
+    background-image: url('../img/foret.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.game-description h4{
+    border: dashed 1px var(--blueCelest);
+    font-weight: normal;
+    padding: 30px;
+    width: 80%;
+    text-justify: auto;
+}
+
+.game-description form{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-description a{
+    color: white;
+    text-decoration: none;
+    background-color: var(--blueCelest);
+    color: var(--purple);
+    width: 100%;
+    height: 10%;
+    padding: 1em;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* //////////////////// SECTION LEADERBOARD \\\\\\\\\\\\\\\\\\\\ */
+
+
+
+.leaderboard-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1em;
+    text-align: center;
+    height: 20vh;
+    justify-content: space-evenly;
+}
+
+.search-input-container{
+    position: relative;
+}
+
+.fa-magnifying-glass{
+    position: absolute;
+    right: 55px;
+    top: 8px;
+}
+
+.leaderboard-header form{
+    width: 100%;
+}
+
+.leaderboard-header form .search-input-container input{
+    padding: 10px;
+    height: 5em;
+    width: 75%;
+    font-size: 0.4em;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.leaderboard-place{
+    border-collapse: separate;
+    border-spacing: 2em;
+    font-weight: bold;
+}
+
+.leaderboard-place:first-child td{
+    background-color: rgba(212, 175, 55, 1);
+    color: black;
+}
+
+.leaderboard-place:first-child td a, .leaderboard-place:nth-child(2) td a, .leaderboard-place:nth-child(3) td a{
+    color: black;
+}
+
+.leaderboard-place:nth-child(2) td{
+    background-color: rgba(192, 192, 192, 1);
+    color: black;
+}
+
+.leaderboard-place:nth-child(3) td{
+    background-color: rgba(205, 127, 50, 1);
+    color: black;
+}
+
+.leaderboard-game-btn{
+    text-decoration: none;
+    color: var(--purple);
+    background-color: var(--blueCelest);
+    padding: 0.8em;
+    width: 75%;
+    font-size: 0.8em;
+    text-align: center;
+}
+
+.leaderboard-game-btn:hover{
+    color: var(--darkBlueCelest);
+    background-color: var(--purple);
+}
+
+.leaderboard-place a, .leaderboard-place a:visited, .leaderboard-place td{
+    text-decoration: none;
+    color: var(--blueCelest);
+}
+
+.leaderboard-container{
+    height: 100vh;
+    width: 100vw;
+}
+
+.leaderboard-container > h3{
+    margin-bottom: 50px;
+}
+
+.leaderboard-container h2{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.leaderboard-container table thead tr th{
+    padding: 5px;
+}
+
+.leaderboard-games{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    height: 100%;
+    width: 90%;
+    margin: auto;
+}
+
+.leaderboard-game{
+    height: 20vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--darkPurple);
+}
+
+
+
+/* //////////////////// PROFILE \\\\\\\\\\\\\\\\\\\\ */
+
+
+
+.profile-container{
+    height: 100vh;
+}
+
+.profile-container a{
+    margin-left: 5px;
+    width: 20px;
+}
+
+.profile-container a i{
+    color: var(--red);
+    font-size: 1.2em;
+}
+
+.profile-name{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-stats-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+}
+
+.profile-stats-content table tr{
+    font-size: 1.2em;
+}
+
+
+
+/* //////////////////// CASSE-BRIQUE | SHOOTER \\\\\\\\\\\\\\\\\\\\ */
+
+
+
+.canvas{
+    width: 100vw;
+    height: 80%;
+}
+
+.casse-brique-container{
+    height: 90vh;
+    width: 100vw;
+    background-image: url('../img/foret.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.casse-brique-score{
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.displayLoserPopUp{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 1);
+    height: 50%;
+    width: 60%;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: loserPopUpAnimation 2s linear infinite;
+    padding: 1em;
+}
+
+.displayLoserButton{
+    font-size: 0.8em;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    background-color: var(--purple);
+    border: solid 1px var(--purple);
+    padding: 1em;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-left: 17px;
+    width: 80%;
+}
+
+.displayQuitButton{
+    font-size: 0.8em;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    background-color: var(--red);
+    border: solid 1px var(--red);
+    padding: 1em;
+    margin-top: 10px;
+    margin-left: 17px;
+    width: 80%;
+}
+
+.displayNone{
+    display: none;
+}
+
+.displayLoserButton:active, .displayLoserButton:hover{
+    background-color: rgba(72, 40, 126, 1);
+}
+
+.displayQuitButton:active, .displayQuitButton:hover{
+    background-color: var(--darkRed);
+    border: solid 1px var(--darkRed);
+}
+
+.displayLoserMessage{
+    font-size: 1em;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+}
+
+.buttons-container{
+    display: flex;
+    justify-content: space-evenly;
+    height: 15vh;
+}
+
+.left-btn, .right-btn{
+    height: 70%;
+    width: 25%;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px #333;
+    border-radius: 50%;
+}
+
+.left-btn:active, .right-btn:active{
+    background-color: var(--purple);
+}
+
+.fa-arrow-right, .fa-arrow-left{
+    font-size: 2em;
+    color: white;
+}
+
+
+
+/* ////////////////////// ADMIN - EDIT GAME \\\\\\\\\\\\\\\\\\\\\\ */
+
+
+
+.admin-game-form{
+    border: solid 1px white;
+    width: 80%;
+    height: 70vh;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background-image: url('../img/foret.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-btn{
+    width: 70%;
+    font-size: 1em;
+    padding: 1em;
+    background-color: var(--blueCelest);
+    font-family: Rubik Moonrocks;
+    color: white;
+    border: solid 1px var(--blueCelest);
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+.add-btn a{
+    color: var(--purple);
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+}
+
+.add-btn-container{
+    display: flex;
+    justify-content: center;
+}
+
+.delete-btn{
+    background-color: var(--red);
+    border: solid 1px var(--red);
+}
+
+.delete-btn a{
+    color: var(--blueCelest);
+}
+
+.more .delete{
+    height: 100%;
+    width: 100%;
+}
+
+
+
+
+/* TABLETTE */
+
+
+
+
+@media screen and (min-width: 768px ) and (max-width: 1023px){
+    
+    header nav > a{
+        font-size: 1.6em;
+    }
+    
+    input{
+        font-size: 1.5em;
+    }
+    
+    .login-form h1{
+        font-size: 2.5em;
+    }
+    
+    label{
+        font-size: 2em;
+    }
+    
+    .login-btn{
+        font-size: 1.5em;
+    }
+    
+    .home h1{
+        font-size: 2.5em;
+    }
+    
+    .loginLink, .signUpLink{
+        font-size: 2em;
+    }
+    
+    .signup-form{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        padding: 20px;
+    }
+    
+    .signup-input{
+        width: 100%;
+        height: 100%;
+    }
+    
+    label{
+        font-size: 1.2em;
+    }
+    
+    .login-form{
+        height: 70vh;
+    }
+    
+    .login-btn{
+    padding: 0.8em;
+    font-size: 1.3em;
+    border: solid 1px var(--white);
+    background-color: var(--blueCelest);
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
+    
+    .signup-btn{
+        grid-column: 1 / 3;
+        grid-row: 3;
+        width: 50%;
+        height: 50%;
+    }
+    
+    .gameslobby-title{
+        font-size: 1.7em;
+    }
+    
+    .game-description-container{
+        height: 90vh;
+        display: flex;
+        align-items: center;
+    }
+    
+    .game-description h2, .game-description h4, .game-description p{
+        font-size: 2em;
+    }
+    
+    .leaderboard-header{
+        margin-top: 20px;
+        margin-bottom: 50px;
+    }
+    
+    .leaderboard-header form{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .search-input-container{
+        width: 50%;
+    }
+    
+    .leaderboard-container table tr{
+        font-size: 1em;
+    }
+    
+    .leaderboard-container h2{
+        font-size: 2.5em;
+    }
+    
+    .profile-stats-container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        height: 100%;
+        width: 100%;
+    }
+    
+    .profile-stats-content{
+        /*height: 70vh;*/
+        width: 100%;
+    }
+    
+    .game-description h2, .game-description h4, .game-description p{
+        font-size: 1.2em;
+    }
+        
+    
+    
+    /* CASSE-BRIQUE */
+    
+    
+    
+    
+    .canvas{
+        width: 50vw;
+        height: 80vh;
+    }
+    
+    .casse-brique-container{
+        height: 90vh;
+        width: 50vw;
+        margin: auto;
+    }
+    
+    .buttons-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 20vh;
+    }
+    
+    .left-btn, .right-btn{
+        height: 10vh;
+    }
+    
+    .modal{
+        height: 100vh;
+    }
+    
+    .modal-content{
+        height: 60%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1.3em;
+        padding: 1em;
+    }
+    
+    .oui, .non{
+        padding: 0.7em;
+    }
+    
+    
+    
+    /* GAMES LOBBY */
+    
+    
+    
+    
+    .gameslobby-title{
+        font-size: 2.5em;
+    }
+    
+    .games{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 50px;
+        height: 100%;
+        width: 100%;
+        padding: 30px;
+    }
+    
+    .game{
+        height: 70vh;
+        width: 100%;
+    }
+    
+    .game-slogan{
+        display: flex;
+        align-items: center;
+        padding: 10px;
+    }
+    
+    
+    
+    /* PROFILE */
+}
+
+
+
+
+/*  PC  */
+
+
+
+
+@media screen and (min-width: 1024px ) and (max-width: 2560px){
+    
+    header nav a{
+        font-size: 2.5em;
+    }
+    
+    input{
+        font-size: 2em;
+    }
+    
+    .signup-form{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        padding: 20px;
+    }
+    
+    .signup-btn{
+        grid-column: 1 / 3;
+        grid-row: 3;
+    }
+    
+    .login-btn, .signup-btn{
+        padding: 0.8em;
+        font-size: 1.6em;
+        border: solid 1px var(--white);
+        background-color: var(--blueCelest);
+        margin-left: auto;
+        margin-right: auto;
+        width: 30%;
+    }
+
+    .login-container h1{
+        font-size: 3em;
+    }
+    
+    .login-form{
+        height: 80vh;
+    }
+    
+    
+    
+    
+    
+    /* CASSE-BRIQUE */
+    
+    
+    
+    
+    .canvas{
+        width: 40vw;
+        height: 90vh;
+    }
+    
+    .casse-brique-container{
+        height: 90vh;
+        width: 40vw;
+        margin: auto;
+    }
+    
+    .buttons-container{
+        display: none;
+    }
+    
+    .left-button, .right-button{
+        display: none;
+    }
+    
+    
+    
+    /* GAMES LOBBY */
+    
+    
+    
+    
+    .gameslobby-title{
+        font-size: 3em;
+    }
+    
+    .games{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 50px;
+        height: 100%;
+        width: 100%;
+        padding: 50px;
+    }
+    
+    .game{
+        height: 50vh;
+        width: 100%;
+    }
+    
+    .game-slogan{
+        display: flex;
+        align-items: center;
+    }
+    
+    .fa-magnifying-glass{
+    position: absolute;
+    right: 200px;
+    top: 8px;
+    }
+    
+    .search-input{
+        width: 50%;
+        height: 100%;
+        font-size: 2em;
+    }
+    
+    .leaderboard-header form{
+        width: 50%;
+        height: 50%;
+    }
+    
+    .leaderboard-header h3{
+        font-size: 2em;
+    }
+    
+    .game-description h2, .game-description h4, .game-description p{
+        font-size: 2em;
+    }
+    
+    .game-description {
+        width: 50%;
+    }
+    
+    .leaderboard-container h2{
+        font-size: 3em;
+    }
+    
+    .leaderboard-container table tr{
+        font-size: 1.5em;
+    }
+    
+    .modal-content{
+        height: 60%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1em;
+        padding: 1em;
+    }
+    
+    .modal-content h3{
+        font-size: 2em;
+    }
+    
+    .oui, .non{
+        padding: 1.5em;
+    }
+    
+    /* PROFILE */
+    
+    .profile-container h2{
+        font-size: 3em;
+    }
+    
+    .profile-container p{
+        font-size: 2em;
+    }
+    
+    .profile-stats-content table tbody tr{
+        font-size: 1.5em;
+    }
+    
+    .profile-stats-content h3{
+        font-size: 2em;
+    }
+    
+    /* ADMIN */
+    
+    .admin-game-form{
+        height: 70vh;
+    }
+    
+    .admin-game-form textarea{
+        width: 35vw;
+    }
+}
+

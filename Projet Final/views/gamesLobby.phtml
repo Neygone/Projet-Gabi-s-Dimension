@@ -1,0 +1,29 @@
+<?php if(isset( $_SESSION['Player'] )): ?>
+    <div class="gameslobby-title-container">
+        <h1 class="gameslobby-title">Content de te revoir <?=$_SESSION['Connection']['username'] ?></h1>
+    </div>
+<?php endif; ?>
+
+<?php if(isset( $_SESSION['NewPlayer'] )): ?>
+    <div class="gameslobby-title-container">
+        <h1 class="gameslobby-title">Bienvenue <?=$_SESSION['Connection']['username'] ?> dans le Games Lobby</h1>
+    </div>
+<?php endif; ?>
+
+<?php if( isset( $_SESSION['Admin'] )): ?>
+    <div class="gameslobby-title-container"> 
+        <h1 class="gameslobby-title">Bonjour ADMIN <?= $_SESSION['Admin']['username']  ?> <i class="fa-solid fa-user-tie"></i></h1>
+    </div>
+<?php endif; ?>
+
+<section class="games">
+    <?php foreach($games as $game): ?>
+        <div class="game">
+            <h2><?= $game['name'] ?></h2>
+            <div class="game-slogan">
+                <h3><?= $game['slogan'] ?></h3>
+            </div>
+            <a href="index.php?route=game&id=<?= $game['id'] ?>" class="more">Découvrir</a>
+        </div>
+    <?php endforeach; ?>
+</section>

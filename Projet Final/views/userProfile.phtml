@@ -1,0 +1,93 @@
+<div class="profile-container">   
+    <div class="profile-name">
+        <h2><?= $info['username'] ?></h2><?= (isset( $_SESSION['Admin'] )) ? '<a href="#"><i class="fa-solid fa-gavel" id="gavel"></i></a>' : '' ?>
+    </div>
+    <p>Première connexion: <?= $info['registration_date'] ?></p>
+     <?php if( $users == [] ): ?>
+        <h2>Aucune information n'est disponible pour cet utilisateur</h2>
+    <?php endif; ?>
+    <div class="profile-stats-container">
+        <?php foreach( $positions as $index=>$position ): ?>
+            <?php if( $position['score_value'] != 0 && $position['user_id'] == $_GET['id'] && $position['id'] == $position['game_id']): ?>
+                <div class="profile-stats-content">
+                    <h3><?= $position['name'] ?></h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Position</th>
+                                <th>Rank</th>
+                                <th>Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <?php if( $index == 0 ): ?>
+                                    <td>#<?= $index + 1?></td>
+                                <?php else: ?>
+                                    <td>#<?= $index ?></td>
+                                <?php endif; ?>
+                            
+                <?php switch( $index ):
+                    case 0: ?>
+                    <td><?= $grandMaster ?></td>
+                <?php break; ?>
+                
+                <?php case 1: ?>
+                    <td><?= $master ?></td>
+                <?php break; ?>
+                
+                <?php case 2: ?>
+                    <td><?= $miniMaster ?></td>
+                <?php break; ?>
+                
+                <!-- De la 4ème place jusqu'à la 6ème place. -->
+                <?php case ( $index >= 3 && $index <= 5): ?>
+                    <td><?= $diamant ?></td>
+                <?php break; ?>
+                
+                <?php case ( $index >= 6 && $index <= 9): ?>
+                    <td><?= $emeraude ?></td>
+                <?php break; ?>
+                
+                <?php case ( $index >= 10 && $index <= 14): ?>
+                    <td><?= $platine ?></td>
+                <?php break; ?>
+                
+                <?php case ( $index >= 15 && $index <= 19): ?>
+                    <td><?= $or ?></td>
+                <?php break; ?>
+                
+                <?php case ( $index >= 20 && $index <= 24): ?>
+                    <td><?= $argent ?></td>
+                <?php break; ?>
+                
+                <?php case ( $index >= 25 && $index <= 29): ?>
+                    <td><?= $bronze ?></td>
+                <?php break; ?>
+                
+                <?php case ( $index >= 30 ): ?>
+                    <td><?= $pierre ?></td>
+                <?php break; ?>
+                <?php endswitch; ?>
+                                <td><?= $position['score_value'] ?></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            <?php endif; ?>
+            <div class="modal" id="modal">
+                <div class="modal-content">
+                    <h3>Es-tu sûr de vouloir bannir <?= $info['username'] ?> définitivement ?</h3>
+                    <div class="oui">
+                        <a href="index.php?route=deleteUser&id=<?= $info['id'] ?>" name="delete_oui">OUI</a>
+                    </div>
+                    <div class="non">
+                        <a href="#" id="no">NON</a>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>
+<script type="text/javascript" src="public/js/deleteUser.js"></script>
+

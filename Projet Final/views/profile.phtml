@@ -1,0 +1,82 @@
+<div class="profile-container">
+    <?php if( isset($_SESSION['Player'] ) || isset( $_SESSION['NewPlayer'] )): ?>
+        <h2><?= $_SESSION['Connection']['username'] ?></h2>
+    <?php endif; ?>
+
+    <?php if(isset( $_SESSION['Admin'] )): ?>
+        <h2><?= $_SESSION['Admin']['username'] ?> <i class="fa-solid fa-user-tie"></i></h2>
+    <?php endif; ?>
+
+    <p>Première connexion: <?= $_SESSION['Connection']['registration_date'] ?></p>
+    <?php if( $infos == [] ): ?>
+        <h2>Aucune information n'est disponible pour cet utilisateur</h2>
+    <?php endif; ?>
+    <div class="profile-stats-container">
+        <?php foreach( $positions as $index=>$position ): ?>
+            <?php if( $position['score_value'] != 0 && $position['user_id'] == $_SESSION['Connection']['id'] ): ?>
+                <div class="profile-stats-content">
+                    <h3><?= $position['name'] ?></h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Position</th>
+                                <th>Rank</th>
+                                <th>Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#<?= $index ?></td>
+                                
+                            <?php switch( $index ):
+                                case 0: ?>
+                                <td><?= $grandMaster ?></td>
+                            <?php break; ?>
+                            
+                                <?php case 1: ?>
+                                <td><?= $master ?></td>
+                            <?php break; ?>
+                            
+                                <?php case 2: ?>
+                                <td><?= $miniMaster ?></td>
+                            <?php break; ?>
+                            
+                            <!-- De la 4ème place jusqu'à la 6ème place. -->
+                            <?php case ( $index >= 3 && $index <= 5): ?>
+                                <td><?= $diamant ?></td>
+                            <?php break; ?>
+                            
+                            <?php case ( $index >= 6 && $index <= 9): ?>
+                                <td><?= $emeraude ?></td>
+                            <?php break; ?>
+                            
+                            <?php case ( $index >= 10 && $index <= 14): ?>
+                                <td><?= $platine ?></td>
+                            <?php break; ?>
+                            
+                            <?php case ( $index >= 15 && $index <= 19): ?>
+                                <td><?= $or ?></td>
+                            <?php break; ?>
+                            
+                            <?php case ( $index >= 20 && $index <= 24): ?>
+                                <td><?= $argent ?></td>
+                            <?php break; ?>
+                            
+                            <?php case ( $index >= 25 && $index <= 29): ?>
+                                <td><?= $bronze ?></td>
+                            <?php break; ?>
+                            
+                            <?php case ( $index >= 30 ): ?>
+                                <td><?= $pierre ?></td>
+                            <?php break; ?>
+                            <?php endswitch; ?>
+                                <td><?= $position['score_value'] ?></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </div>
+</div>
+

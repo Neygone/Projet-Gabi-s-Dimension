@@ -1,0 +1,33 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head> 
+<body>
+    <div class="casse-brique-container">
+        <canvas width="980" height="1250" id="canvas" class="canvas"></canvas>
+        <div class="buttons-container">
+            <div class="left-btn" id="leftButton">
+                <i class="fa-solid fa-arrow-left"></i>
+            </div>
+    
+            <div class="right-btn" id="rightButton">
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+        </div>
+        <h2 class="casse-brique-score" id="casse_brique_score"></h2>
+        <div class="loser-pop-up" id="loserPopUp">
+        <form action="index.php?route=updateScoreAndReplay&id=<?= $game['id'] ?>" method="POST">
+            <label for="score"></label>
+            <input type="hidden" name="score" class="casse_brique_input" id="casse_brique_input" value="">
+                <div id="loserMessage" class="loser-message"></div>
+                <button id="loserButton" class="loser-btn" type="submit"></button>
+        </form>
+        
+        <form action="index.php?route=updateScoreAndQuit&id=<?= $game['id'] ?>" method="POST">
+            <label for="score"></label>
+            <input type="hidden" name="score" class="casse_brique_input" id="score_input" value="">
+            <button type="submit" id="quitButton" class="loser-btn"></button>
+        </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="public/js/casseBrique.js"></script>
+</body>

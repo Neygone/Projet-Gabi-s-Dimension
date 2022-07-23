@@ -1,0 +1,19 @@
+<div class="leaderboard-container">
+    <div class="leaderboard-header">
+        <h3>Retrouve tous les meilleurs joueurs dans ce LEADERBOARD !</h3>
+        <form method="POST">
+            <div class="search-input-container">
+                <label for="search"></label>
+                <input type="text" name="search" class="search-input" id="searchBar" placeholder="Rechercher un joueur" autocomplete="off"/>
+            </div>
+        </form>
+    </div> 
+    <div class="leaderboard-games">
+        <?php foreach( $games as $game ): ?>
+            <div class="leaderboard-game">
+                <h3><?= $game['name'] ?></h3>
+                <a href="index.php?route=completeLeaderboard&id=<?= $game['id'] ?>" class="leaderboard-game-btn">VOIR LE CLASSEMENT COMPLET</a>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>
